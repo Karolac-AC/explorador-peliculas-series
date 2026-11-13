@@ -176,25 +176,41 @@ button, h1, h2, h3 {
 .movie-poster {
   aspect-ratio: 2 / 3;
   background: linear-gradient(145deg, #213885, #5f3475);
-  color: white;
-  border-radius: 12px;
+  color: #f8f5f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.movie-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card:hover .movie-poster {
+  box-shadow: 0 4px 12px #08184926;
+}
+
+.movie-poster-fallback {
+  height: 100%;
   padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 16px;
 }
 
-.movie-poster span {
-  align-self: flex-start;
-  padding: 6px 10px;
-  border-radius: 20px;
-  background: #ffffff26;
-  font-size: 12px;
-}
-
-.movie-poster strong {
+.movie-poster-fallback strong {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: clamp(15px, 1.6vw, 20px);
+  line-height: 1.4;
+}
+
+.movie-poster-fallback span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ecdfd2;
 }
 
 .movie-info h3 {
@@ -203,9 +219,16 @@ button, h1, h2, h3 {
 }
 
 .movie-info p {
-  margin: 0;
+  margin: 4px 0 0;
+  line-height: 1.5;
   color: #5f3475;
   font-size: 13px;
+}
+
+.movie-info .movie-type {
+  color: #213885;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 @media (max-width: 1100px) {
@@ -270,11 +293,7 @@ button, h1, h2, h3 {
     gap: 22px 12px;
   }
 
-  .movie-poster {
+  .movie-poster-fallback {
     padding: 12px;
-  }
-
-  .movie-poster strong {
-    font-size: 15px;
   }
 }

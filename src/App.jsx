@@ -20,6 +20,31 @@ function NavigationIcon({ name }) {
   );
 }
 
+function MoviePoster({ movie }) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  return (
+    <div className="movie-poster">
+      {movie.image && !imageFailed ? (
+        <img
+          src={movie.image}
+          alt={`Póster de ${movie.title}`}
+          width="400"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          onError={() => setImageFailed(true)}
+        />
+      ) : (
+        <div className="movie-poster-fallback">
+          <strong>{movie.title}</strong>
+          <span>Póster no disponible</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState("explorar");
   const [logoFailed, setLogoFailed] = useState(false);
@@ -71,13 +96,11 @@ function App() {
           <section className="movie-grid" aria-label="Catálogo de películas y series">
             {movies.map((movie) => (
               <article className="movie-card" key={movie.id}>
-                <div className="movie-poster">
-                  <span>{movie.type}</span>
-                  <strong>{movie.title}</strong>
-                </div>
+                <MoviePoster key={movie.image} movie={movie} />
 
                 <div className="movie-info">
                   <h3>{movie.title}</h3>
+                  <p className="movie-type">{movie.type}</p>
                   <p>{movie.genre} · {movie.year}</p>
                 </div>
               </article>
