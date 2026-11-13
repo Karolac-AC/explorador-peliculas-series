@@ -42,7 +42,7 @@ Responsable principalmente de:
 - Favoritos.
 - Integración de componentes.
 
-### Compañera - Diseño/UI
+### Nickte - Diseño/UI
 Responsable principalmente de:
 - Diseño general de la interfaz.
 - Header.
