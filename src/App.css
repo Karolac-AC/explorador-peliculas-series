@@ -1,12 +1,299 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap");
+
+:root {
+  font-family: "Raleway", sans-serif;
+  color: #081849;
+  background: #f8f5f0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
-main {
-  padding: 2rem;
+button, h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  --sidebar-width: 224px;
+}
+
+.app-header {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  background: #081849;
+  color: #ecdfd2;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #ecdfd2;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background: #213885;
+}
+
+.nav-item[aria-current="page"] {
+  background: #213885;
+  border-color: #cccacc;
+}
+
+.nav-item:focus-visible {
+  outline: 3px solid #ecdfd2;
+  outline-offset: 3px;
+}
+
+.brand {
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.brand-text h1 {
+  margin: 0;
+  color: #ecdfd2;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.brand-text p {
+  margin: 6px 0 0;
+  color: #c5a0d5;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.header-label {
+  margin-top: auto;
+  line-height: 1.7;
+  font-size: 13px;
+  color: #cccacc;
+}
+
+.catalog {
+  margin-left: var(--sidebar-width);
+  padding: 36px clamp(24px, 3vw, 48px);
+  min-width: 0;
+}
+
+.catalog > section {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.catalog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #893172;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.catalog-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.catalog-heading p {
+  line-height: 1.5;
+}
+
+.catalog-count {
+  white-space: nowrap;
+  color: #5f3475;
+  font-weight: 600;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+
+.movie-card {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.movie-poster {
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(145deg, #213885, #5f3475);
+  color: #f8f5f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.movie-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card:hover .movie-poster {
+  box-shadow: 0 4px 12px #08184926;
+}
+
+.movie-poster-fallback {
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.movie-poster-fallback strong {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(15px, 1.6vw, 20px);
+  line-height: 1.4;
+}
+
+.movie-poster-fallback span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ecdfd2;
+}
+
+.movie-info h3 {
+  margin: 12px 0 4px;
+  font-size: 16px;
+}
+
+.movie-info p {
+  margin: 4px 0 0;
+  line-height: 1.5;
+  color: #5f3475;
+  font-size: 13px;
+}
+
+.movie-info .movie-type {
+  color: #213885;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .app-header {
+    position: static;
+    width: auto;
+    padding: 24px 20px;
+    gap: 0;
+    overflow: visible;
+  }
+
+  .brand {
+    min-height: 88px;
+  }
+
+  .brand-with-logo {
+    width: 100%;
+    max-width: 280px;
+    margin-inline: auto;
+  }
+
+  .main-navigation {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 10;
+    flex-direction: row;
+    gap: 12px;
+    padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+    background: #081849;
+    border-top: 1px solid #213885;
+  }
+
+  .nav-item {
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    padding-inline: 8px;
+  }
+
+  .header-label {
+    display: none;
+  }
+
+  .catalog {
+    margin-left: 0;
+    padding: 30px 20px calc(100px + env(safe-area-inset-bottom));
+  }
+
+  .catalog-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .movie-poster-fallback {
+    padding: 12px;
+  }
 }
