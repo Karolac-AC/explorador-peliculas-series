@@ -1,6 +1,30 @@
+const trailers = [
+  "zSWdZVtXT7E", // Interstellar
+  "Ga6RYejo6Hk", // Coco
+  "b9EkMc79ZSU", // Stranger Things
+  "mqqft2x_Aa4", // The Batman
+  "HhesaQXLuRY", // Breaking Bad
+  "JfVOs4VSpmA", // Spider-Man: No Way Home
+  "Di310WS8zLk", // Wednesday
+  "5PSNL1qE6VY", // Avatar
+  "uLtkt8BonwM", // The Last of Us
+  "KYz2wyBy3kc", // Toy Story
+  "rrwycJ08PSA", // Dark
+  "zAGVQLHvwOY", // Joker
+  "aOC8E8z_ifw", // The Mandalorian
+  "CwXOrWvPBPk", // Shrek
+  "oVzVdvGIC7U", // Peaky Blinders
+  "n9xhJrPXop4", // Dune
+  "M1bhOaLV4FU", // The Boys
+  "yRUAzGQ3nSY", // Inside Out
+  "oqxAJKy0ii4", // Squid Game
+  "TcMBFSGVi1c", // Avengers: Endgame
+];
+
 const movies = [
   {
     id: 1,
+    trailerId: trailers[0],
     title: "Interstellar",
     type: "Película",
     genre: "Ciencia ficción",
@@ -12,6 +36,7 @@ const movies = [
   },
   {
     id: 2,
+    trailerId: trailers[1],
     title: "Coco",
     type: "Película",
     genre: "Animación",
@@ -23,6 +48,7 @@ const movies = [
   },
   {
     id: 3,
+    trailerId: trailers[2],
     title: "Stranger Things",
     type: "Serie",
     genre: "Misterio",
@@ -34,6 +60,7 @@ const movies = [
   },
   {
     id: 4,
+    trailerId: trailers[3],
     title: "The Batman",
     type: "Película",
     genre: "Acción",
@@ -45,6 +72,7 @@ const movies = [
   },
   {
     id: 5,
+    trailerId: trailers[4],
     title: "Breaking Bad",
     type: "Serie",
     genre: "Drama",
@@ -56,6 +84,7 @@ const movies = [
   },
   {
     id: 6,
+    trailerId: trailers[5],
     title: "Spider-Man: No Way Home",
     type: "Película",
     genre: "Acción",
@@ -67,6 +96,7 @@ const movies = [
   },
   {
     id: 7,
+    trailerId: trailers[6],
     title: "Wednesday",
     type: "Serie",
     genre: "Comedia",
@@ -78,6 +108,7 @@ const movies = [
   },
   {
     id: 8,
+    trailerId: trailers[7],
     title: "Avatar",
     type: "Película",
     genre: "Ciencia ficción",
@@ -89,6 +120,7 @@ const movies = [
   },
   {
     id: 9,
+    trailerId: trailers[8],
     title: "The Last of Us",
     type: "Serie",
     genre: "Drama",
@@ -100,6 +132,7 @@ const movies = [
   },
   {
     id: 10,
+    trailerId: trailers[9],
     title: "Toy Story",
     type: "Película",
     genre: "Animación",
@@ -111,6 +144,7 @@ const movies = [
   },
   {
     id: 11,
+    trailerId: trailers[10],
     title: "Dark",
     type: "Serie",
     genre: "Ciencia ficción",
@@ -122,6 +156,7 @@ const movies = [
   },
   {
     id: 12,
+    trailerId: trailers[11],
     title: "Joker",
     type: "Película",
     genre: "Drama",
@@ -133,6 +168,7 @@ const movies = [
   },
   {
     id: 13,
+    trailerId: trailers[12],
     title: "The Mandalorian",
     type: "Serie",
     genre: "Ciencia ficción",
@@ -144,6 +180,7 @@ const movies = [
   },
   {
     id: 14,
+    trailerId: trailers[13],
     title: "Shrek",
     type: "Película",
     genre: "Animación",
@@ -155,6 +192,7 @@ const movies = [
   },
   {
     id: 15,
+    trailerId: trailers[14],
     title: "Peaky Blinders",
     type: "Serie",
     genre: "Drama",
@@ -166,6 +204,7 @@ const movies = [
   },
   {
     id: 16,
+    trailerId: trailers[15],
     title: "Dune",
     type: "Película",
     genre: "Ciencia ficción",
@@ -177,6 +216,7 @@ const movies = [
   },
   {
     id: 17,
+    trailerId: trailers[16],
     title: "The Boys",
     type: "Serie",
     genre: "Acción",
@@ -188,6 +228,7 @@ const movies = [
   },
   {
     id: 18,
+    trailerId: trailers[17],
     title: "Inside Out",
     type: "Película",
     genre: "Animación",
@@ -199,6 +240,7 @@ const movies = [
   },
   {
     id: 19,
+    trailerId: trailers[18],
     title: "Squid Game",
     type: "Serie",
     genre: "Suspenso",
@@ -210,6 +252,7 @@ const movies = [
   },
   {
     id: 20,
+    trailerId: trailers[19],
     title: "Avengers: Endgame",
     type: "Película",
     genre: "Acción",
