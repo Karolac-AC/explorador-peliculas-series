@@ -2,7 +2,7 @@
 
 Proyecto del **Tema 3: Programación del lado del cliente - Manejo de Frameworks**.
 
-La aplicación permitirá explorar un catálogo de películas y series utilizando **React**, componentes, manejo de estado y renderizado dinámico.
+La aplicación permite explorar un catálogo de películas y series utilizando **React**, componentes, manejo de estado y renderizado dinámico.
 
 ## Objetivo
 
@@ -20,7 +20,7 @@ Desarrollar una aplicación web interactiva que permita consultar, buscar, filtr
 - Mostrar una sección especial con los favoritos.
 - Diseñar una interfaz sencilla y adaptable a diferentes pantallas.
 
-> No se utilizará backend, base de datos ni API. Los datos estarán almacenados localmente dentro del proyecto.
+El catálogo y los pósters se guardan dentro del proyecto. Los favoritos se conservan en el navegador con `localStorage`. Los avances opcionales se reproducen mediante videos incrustados de YouTube y requieren internet.
 
 ## Tecnología
 
@@ -62,32 +62,27 @@ Responsable principalmente de:
 
 Los cambios de las ramas `feature/*` deberán integrarse primero en `develop`. Cuando la aplicación esté estable, `develop` se integrará en `main`.
 
-## Estructura propuesta
+## Componentes
 
-```
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── SearchBar.jsx
-│   ├── Filters.jsx
-│   ├── MovieCard.jsx
-│   ├── MovieDetails.jsx
-│   └── Favorites.jsx
-├── data/
-│   └── movies.js
-├── App.jsx
-├── App.css
-└── main.jsx
-```
+Los componentes de la interfaz están en `src/App.jsx`.
 
-## Ejecución
+- `App` coordina la portada, el menú, la búsqueda, los filtros, los detalles y la lista de favoritos. Usa el estado de React para actualizar la interfaz en respuesta a las acciones del usuario.
+- `CatalogRow` organiza los títulos en filas con desplazamiento horizontal. `RevealCard` anima la entrada de cada tarjeta al aparecer en pantalla.
+- `MoviePoster` muestra la carátula y ofrece una alternativa si la imagen falla. `TrailerPoster` añade la vista previa del tráiler.
+- `NavigationIcon` muestra los íconos de Explorar y Favoritos.
 
-Cuando el proyecto React esté inicializado:
+El arreglo de 20 títulos está en `src/data/movies.js` y las carátulas están en `public/images`.
+
+## Instalación y ejecución
+
+Con Node.js y npm instalados, abre una terminal en la carpeta del proyecto:
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
+
+Abre la dirección que indique Vite en la terminal. Para generar la versión de producción, ejecuta `npm run build`.
 
 ## Forma de trabajo
 
